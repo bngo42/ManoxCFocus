@@ -1,11 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Manonolita x Child Focus</title>
+	<title>Manonolita & Child Focus</title>
   <link rel="stylesheet" type="text/css" href="css/semantic.css">
   <style>
+
+    img {
+      -webkit-user-drag: none;
+      -khtml-user-drag: none;
+      -moz-user-drag: none;
+      -o-user-drag: none;
+      user-drag: none;
+    }
+
+    h1,h2 {
+      color: white !important;
+    }
+
     body { 
-      background: linear-gradient(rgb(141, 28, 75), rgb(248, 172, 8));
+      background: linear-gradient(#f87408, #8d1c5a);
       height: 100%;
       margin: 0;
       background-repeat: no-repeat;
@@ -18,13 +31,13 @@
 <div class="ui grid container">
   <!-- HEADER -->
   <div class="row">
-    <div class="sixteen wide column">
+    <div class="column">
       <img class="ui fluid image" src="img/logo.png">
     </div>
   </div>
   <!-- STREAM -->
   <div class="row">
-    <div class="sixteen wide column">
+    <div class="column">
         <h1 class="ui header">Le Stream</h1>
       <div style="background-color:rgba(255, 255, 255, 0.1);border-radius:5px;padding:0.8%">
         <div id="twitch-embed"></div>
@@ -33,12 +46,14 @@
   </div>
   <!-- CHARITY -->
   <div class="row centered">
-    <div style="border: 1px solid blue" class="twelve wide column">
+    <div class="twelve wide column">
       <h2 class="ui header">Ce stream supporte:</h2>
     </div>  
-    <div style="border: 1px solid blue; padding:0" class="four wide column">
+    <div style"padding:0" class="four wide column">
         <!-- <h2 class="ui header">Faites un don:</h2> -->
-        <img style="background-color:red" class="image" src="img/support.png">
+        <a target="_blank" href="http://google.com" class="ui medium image">
+          <img style="background-color:#6340a4" src="img/support.png">
+        </a>
     </div>  
   </div>
   <div class=row></div>
