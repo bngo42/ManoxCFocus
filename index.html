@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
 	<title>Manonolita & Child Focus</title>
   <link rel="stylesheet" type="text/css" href="css/semantic.css">
+  <link href="https://fonts.googleapis.com/css?family=Overpass" rel="stylesheet">
   <style>
 
     img {
@@ -13,7 +15,7 @@
       user-drag: none;
     }
 
-    h1,h2 {
+    p,h1,h2 {
       color: white !important;
     }
 
@@ -33,41 +35,68 @@
   <div class="row">
     <div class="column">
       <img class="ui fluid image" src="img/logo.png">
+      <h1 class="ui center aligned header" style="font-family: 'Overpass', sans-serif;letter-spacing:0.2em">
+          STREAM DE CHARITÉ - DIMANCHE 2 SEPTEMBRE
+      </h1>
     </div>
   </div>
   <!-- STREAM -->
   <div class="row">
     <div class="column">
-        <h1 class="ui header">Le Stream</h1>
       <div style="background-color:rgba(255, 255, 255, 0.1);border-radius:5px;padding:0.8%">
         <div id="twitch-embed"></div>
       </div>
     </div>
   </div>
   <!-- CHARITY -->
-  <div class="row centered">
-    <div class="twelve wide column">
+  <div class="row centered stackable" style="padding:0.8%">
+    <div class="twelve wide column" style="background-color:#f87408; padding:0.8%">
       <h2 class="ui header">Ce stream supporte:</h2>
+      <div class="ui items">
+          <div class="item">
+              <div class="ui small image">
+                <img src="img/child_focus.png">
+              </div>
+              <div class="middle aligned content">
+                <h1 class="header">
+                  Fondation Child Focus
+                </h1>
+                <div class="description">
+                  <p>
+                      La Fondation pour Enfants Disparus et Sexuellement Exploités est une fondation d’utilité publique active sous le nom de Child Focus.
+                      Sept jours sur sept, 24 heures sur 24, la Fondation met tout en œuvre pour retrouver les enfants disparus et lutter contre l’exploitation sexuelle des mineurs en ligne et hors ligne.
+                  </p>
+                </div>
+                <div class="extra">
+                  <a target="_blank" href="http://www.childfocus.be" class="ui right floated button">
+                    Site Internet
+                  </a>
+                </div>
+              </div>
+            </div>
+      </div>
     </div>  
-    <div style"padding:0" class="four wide column">
-        <!-- <h2 class="ui header">Faites un don:</h2> -->
+    <div class="four wide column right floated" style="padding:0.8% !important; background-color:#6340a4">
         <a target="_blank" href="http://google.com" class="ui medium image">
-          <img style="background-color:#6340a4" src="img/support.png">
+          <img src="img/support.png">
         </a>
     </div>  
   </div>
-  <div class=row></div>
-  <div class=row></div>
-  <div class=row></div>
-  <div class=row></div>
+  <!-- TWEETS -->
+  <div class=row>
+    <h1 class="ui header">Vos tweets</h1>
+  </div>
+  <div class="tweet-box">
 
+  </div>
 
+  <script src="js/tweets.js"></script>
   <script src="https://embed.twitch.tv/embed/v1.js"></script>
   <script type="text/javascript">
       new Twitch.Embed("twitch-embed", {
         width: "100%",
         height: 480,
-        channel: "manonolita",
+        channel: "ibobtouch",
         layout: "video-with-chat"
       });
   </script>
