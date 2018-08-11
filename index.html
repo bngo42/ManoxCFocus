@@ -19,11 +19,11 @@
       color: white !important;
     }
 
-    body { 
-      background: linear-gradient(#f87408, #8d1c5a);
+    body {
+      background: url("img/stars.png"), linear-gradient(-150deg, #f87408, #a71b6c);
+      width:100%;
       height: 100%;
       margin: 0;
-      background-repeat: no-repeat;
       background-attachment: fixed;
     };
 
@@ -45,7 +45,6 @@
 </head>
 <body>
 
-  <div class="floating" style="border:1px solid red; width:100px; height:100px"></div>
 <div class="ui grid container">
   <!-- HEADER -->
   <div class="row" style="padding: 10% 0">
@@ -66,23 +65,60 @@
       </div>
     </div>
   </div>
-  <!-- CHARITY -->
-  <div class="row centered stackable" style="padding:0.8%">
-    <h1 class="uiheader">Quel est le but de cet event ?</h1>
+  <!-- GOAL -->
+  <div class="row centered stackable" style="padding:0.8%; margin-top:5%">
+    <h1>Quel est le but de cet event ?</h1>
     <div >
       <p>Batnae municipium in Anthemusia conditum Macedonum manu priscorum ab Euphrate flumine brevi spatio disparatur,
         refertum mercatoribus opulentis, ubi annua sollemnitate prope Septembris initium mensis ad nundinas magna promiscuae
         fortunae convenit multitudo ad commercanda quae Indi mittunt et Seres aliaque plurima vehi terra marique consueta.</p>
     </div>
   </div>
+  <!-- CHARITY / DONATION -->
+  <div class="row stackable">
+    <div class="twelve wide column" style="padding:0.8%;background-color:#6400c2">
+      <h2 class="ui header">L'association</h2>
+      <div class="ui items">
+        <div class="item">
+          <div class="ui small image">
+            <img src="img/child_focus.png">
+          </div>
+          <div class="middle aligned content">
+            <p class="header">
+              Fondation Child Focus
+            </p>
+            <div class="description">
+              <p>Batnae municipium in Anthemusia conditum Macedonum manu priscorum ab Euphrate flumine brevi spatio disparatur,
+                refertum mercatoribus opulentis, ubi annua sollemnitate prope Septembris initium mensis ad nundinas magna promiscuae
+                fortunae convenit multitudo ad commercanda quae Indi mittunt et Seres aliaque plurima vehi terra marique consueta.
+              </p>
+            </div>
+            <div class="extra">
+              <a target="_blank" href="http://www.childfocus.be/" class="ui right floated button violet right labeled icon">
+                <i class="right globe icon"></i>
+                Site internet
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="support four wide column" style="padding:0.8%;background-color:#8500ff">
+      <img class="ui centered medium image" src="img/support.png">
+    </div>
+  </div>
   <!-- TWEETS -->
-  <div class=row>
+  <div class="row centered">
     <h1 class="ui header">Vos tweets</h1>
     <div class="tweet-feed"></div>
   </div>
 
-
-
+  <script>
+    let support = document.querySelector('.support');
+    support.addEventListener('click', () => {
+      window.open('https://streamlabs.com/manonolita', '_blank');
+    });
+  </script>
   <script src="js/tweets.js"></script>
   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
   <script src="https://embed.twitch.tv/embed/v1.js"></script>

@@ -77,21 +77,41 @@ let obj = {
   "matching_rules": [ ]
 }
 
-for (let i = 0; i < 10; i++){
-  datas.push(obj);
+
+setInterval(() => {
+  request('GET', 'https://jsonplaceholder.typicode.com/posts', null)
+    .then(res => {
+      let data = JSON.parse(res);
+
+      console.log(data);
+    })
+    .catch(console.error);
+}, 2000);
+
+
+
+
+function removeDuplicate(array){
+  return [...new Set(array)];
 }
 
-let createBoxes = new Promise((resolve, reject) => {
-  if (!datas || datas.length == 0){
-    reject();
-  }
-  datas.forEach(el => {
-    group.appendChild(createBox(el));
-  });
-  resolve();
-});
 
-createBoxes();
+function request(method, url, params = {}){
+  return new Promise((resolve, reject) => {
+    let xhr = new XMLHttpRequest();
+
+    xhr.open(method, url, true);
+    xhr.onreadystatechange = () => {
+      if(xhr.readyState === 4 && xhr.status === 200) {
+        resolve(xhr.responseText);
+      }
+    };
+    xhr.onerror = () => {
+      reject();
+    }
+    xhr.send(params);
+  });
+}
 
 function createBox(tweet){
   console.log(tweet);
