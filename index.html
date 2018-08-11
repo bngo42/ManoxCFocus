@@ -27,6 +27,13 @@
       background-attachment: fixed;
     };
 
+    @media (max-width: 767px) {
+      body{
+        background-attachment: initial;
+      }
+
+    }
+
     .floating {  
       animation-name: floating;
       animation-duration: 3s;
@@ -88,9 +95,9 @@
               Fondation Child Focus
             </p>
             <div class="description">
-              <p>Batnae municipium in Anthemusia conditum Macedonum manu priscorum ab Euphrate flumine brevi spatio disparatur,
-                refertum mercatoribus opulentis, ubi annua sollemnitate prope Septembris initium mensis ad nundinas magna promiscuae
-                fortunae convenit multitudo ad commercanda quae Indi mittunt et Seres aliaque plurima vehi terra marique consueta.
+              <p>
+                La Fondation pour Enfants Disparus et Sexuellement Exploités est une fondation d’utilité publique active sous le nom de Child Focus.
+                Sept jours sur sept, 24 heures sur 24, la Fondation met tout en œuvre pour retrouver les enfants disparus et lutter contre l’exploitation sexuelle des mineurs en ligne et hors ligne.
               </p>
             </div>
             <div class="extra">
@@ -114,10 +121,15 @@
   </div>
 
   <script>
-    let support = document.querySelector('.support');
-    support.addEventListener('click', () => {
-      window.open('https://streamlabs.com/manonolita', '_blank');
-    });
+
+    bindLink('.support', 'https://streamlabs.com/manonolita');
+
+    function bindLink(className, url){
+      let div = document.querySelector(className);
+      div.addEventListener('click', () => {
+        window.open(url, '_blank');
+      });
+    }
   </script>
   <script src="js/tweets.js"></script>
   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
