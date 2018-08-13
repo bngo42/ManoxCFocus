@@ -4,58 +4,8 @@
   <meta charset="UTF-8">
 	<title>Manonolita & Child Focus</title>
   <link rel="stylesheet" type="text/css" href="css/semantic.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Overpass" rel="stylesheet">
-  <style>
-
-    img {
-      -webkit-user-drag: none;
-      -khtml-user-drag: none;
-      -moz-user-drag: none;
-      -o-user-drag: none;
-      user-drag: none;
-    }
-
-    span, p,h1,h2 {
-      color: white !important;
-    }
-
-    body {
-      background:linear-gradient(-150deg, #f87408, #a71b6c);
-      width:100%;
-      height: 100%;
-      margin: 0;
-      background-attachment: fixed;
-    };
-
-    @media (max-width: 767px) {
-      body{
-        /* background-attachment: initial !important; */
-      }
-
-    }
-
-    .floating {  
-      animation-name: floating;
-      animation-duration: 3s;
-      animation-iteration-count: infinite;
-      animation-timing-function: ease-in-out;
-      margin-left: 30px;
-      margin-top: 5px;
-    }
-
-    @keyframes floating {
-        from { transform: translate(0,  0px); }
-        65%  { transform: translate(0, 15px); }
-        to   { transform: translate(0, -0px); }    
-    }
-
-    .parallax-background {
-      position:absolute;
-      width: 100%;
-      height: 100%;
-      background : url('img/stars.png');
-    }
-  </style>
 </head>
 <body>
 <div class="parallax-background"></div>
@@ -83,41 +33,23 @@
   <div class="row centered stackable" style="padding:0.8%; margin-top:5%">
     <h1>Quel est le but de cet event ?</h1>
     <div >
-      <p>Batnae municipium in Anthemusia conditum Macedonum manu priscorum ab Euphrate flumine brevi spatio disparatur,
-        refertum mercatoribus opulentis, ubi annua sollemnitate prope Septembris initium mensis ad nundinas magna promiscuae
-        fortunae convenit multitudo ad commercanda quae Indi mittunt et Seres aliaque plurima vehi terra marique consueta.</p>
+        <p>
+            Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn. Syha'h athg mnahn'agl, Azathoth sll'haor nggrah'n stell'bsnaoth shagg s'uhn vulgtm ooboshu, ebunma athg shagg kn'a stell'bsna hafh'drn nnnuln. 
+            Zhro bug Shub-Niggurath n'gha 'ai ch' n'gha nglui Tsathoggua, ph'kn'a ulnyar Cthulhu ngah vulgtlagln f'mg li'hee nnngoka s'uhn, nafl'fhalma ron phlegeth 'fhalma ehye shtunggli ftaghu. 
+            Syha'h chtenff h'uaaah y-nilgh'ri R'lyeh k'yarnak naya nwog naflllll, Cthulhu hlirgh mg shogg n'gha Cthulhu hai shtunggli, nog throd vulgtm uaaah kadishtu nw shaggnyth. 
+            Gnaiih throd wgah'nyar hai vulgtlagln throd ronog chtenff hai ooboshu s'uhn nog f'sll'ha nachtenff, cch' hrii ch' 'bthnk eeyar n'gha fm'latgh orr'e wgah'n r'luh s'uhn. 
+        </p>
     </div>
   </div>
   <!-- CHARITY / DONATION -->
   <div class="row stackable">
-    <div class="twelve wide column" style="padding:0.8%;background-color:#6400c2">
-      <h2 class="ui header">L'association</h2>
-      <div class="ui items">
-        <div class="item">
-          <div class="ui small image">
-            <img src="img/child_focus.png">
-          </div>
-          <div class="middle aligned content">
-            <p class="header">
-              Fondation Child Focus
-            </p>
-            <div class="description">
-              <p>
-                La Fondation pour Enfants Disparus et Sexuellement Exploités est une fondation d’utilité publique active sous le nom de Child Focus.
-                Sept jours sur sept, 24 heures sur 24, la Fondation met tout en œuvre pour retrouver les enfants disparus et lutter contre l’exploitation sexuelle des mineurs en ligne et hors ligne.
-              </p>
-            </div>
-            <div class="extra">
-              <a target="_blank" href="http://www.childfocus.be/" class="ui right floated button violet right labeled icon">
-                <i class="right globe icon"></i>
-                Site internet
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="sixteen wide column center aligned" style="padding:0.8%;">
+      <h2>L'association</h2>
     </div>
-    <div class="support four wide column" style="padding:0.8%;background-color:#8500ff">
+    <div class="twelve wide column" style="padding:0.8%;background-color:#6400c2">
+      <img class="ui medium image">
+    </div>
+    <div class="support four wide column">
       <img class="ui centered medium image" src="img/support.png">
     </div>
   </div>
@@ -128,15 +60,11 @@
   </div>
 
   <script>
-
     let background = document.querySelector('.parallax-background');
-
     window.addEventListener('scroll', e => {
       background.style.top = window.scrollY + "px";
       background.style.backgroundPosition = "0px " + (-window.scrollY * 0.5) + "px";
     });
-
-
   </script>
   <script>
     bindLink('.support', 'https://streamlabs.com/manonolita');

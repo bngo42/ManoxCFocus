@@ -83,7 +83,7 @@ setInterval(() => {
     .then(res => {
       let data = JSON.parse(res);
 
-      console.log(data);
+      // console.log(data);
     })
     .catch(console.error);
 }, 2000);
