@@ -85,9 +85,6 @@ function doRequest(method, path, params = {}){
 }
 
 
-
-
-
 function encodeConsumerToken(){
     return Buffer.from(encodeRFC(CONSUMER_CLIENT) + ":" + encodeRFC(CONSUMER_SECRET)).toString('base64');
 }
