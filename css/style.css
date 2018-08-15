@@ -10,12 +10,21 @@ span, p,h1,h2 {
     color: white !important;
   }
 
-body {
-    background: linear-gradient(-150deg, #f87408, #a71b6c);
-
-    margin: 0;
-    background-attachment: fixed;
-  }
+body::before {
+  content: ' ';
+  display: block;
+  background: linear-gradient(-150deg, #f87408, #a71b6c);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  z-index: -10;
+}
 
 
 .parallax-background {
@@ -33,4 +42,38 @@ body {
 
 .support :hover {
   background-color:#9f38ff;
+}
+
+.twitch-player {
+  background-color:rgba(255, 255, 255, 0.1);
+  border-radius:5px;
+  padding:0.8%;
+}
+
+@media only screen and (min-width: 992px) {
+  .twitch-player {
+    height:40vw;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .twitch-player {
+    height: 480px;
+  }
+}
+
+/* Tablet and Mobile */
+
+@media only screen and (max-width: 991px) {
+  .twitch-player {
+    height: 480px !important;
+  }
+}
+
+/* Mobile */
+
+@media only screen and (max-width: 767px) {
+  .twitch-player {
+    height:50vw !important;
+  }
 }
