@@ -22,14 +22,18 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true })); 
 app.listen(PORT);
 
-app.use('/hashtag/:tag', (req, res) => {
+app.use('/hashtag', (req, res) => {
 
-    let tag = req.params.tag;
-
+    let tag = '#' + req.query.tag;
+    let current = req.query.currentId;
     getToken()
         .then(() => {
             doRequest('GET', '/1.1/search/tweets.json', {
-                q : tag
+                q : tag,
+                result_type : 'recent',
+                count : 100,
+                tweet_mode: "extended",
+                since_id : ((current) ? current : 0)
             })
                 .then(data => {
                     res.send(data);
