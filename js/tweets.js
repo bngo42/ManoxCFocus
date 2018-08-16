@@ -23,7 +23,6 @@ setInterval(() => {
           }
         }
       });
-      console.log(datas);
     })
     .catch(console.error);
 
@@ -77,6 +76,7 @@ function createBox(tweet){
 
   item.classList.add('item');
   item.style.backgroundColor = "#ffffff40";
+  item.style.borderRadius = "4px";
   item.style.padding = "2%";
   item.appendChild(imageDiv);
   item.appendChild(content);
@@ -96,6 +96,5 @@ function createBox(tweet){
   textDiv.appendChild(text);
 
   text.innerHTML = tweet.full_text;
-
   return item;
 }

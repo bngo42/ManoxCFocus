@@ -31,7 +31,7 @@ app.use('/hashtag', (req, res) => {
             doRequest('GET', '/1.1/search/tweets.json', {
                 q : tag,
                 result_type : 'recent',
-                count : 100,
+                count : 50,
                 tweet_mode: "extended",
                 since_id : ((current) ? current : 0)
             })
