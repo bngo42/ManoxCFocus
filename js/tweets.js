@@ -5,7 +5,7 @@ let index = 0;
 
 let currentId = 0;
 setInterval(() => {
-  request('GET', 'http://localhost:8080/hashtag', { currentId, tag : 'arethafranklin' })
+  request('GET', 'https://manocf-server.herokuapp.com/hashtag', { currentId, tag : 'arethafranklin' })
     .then(res => {
       let data = JSON.parse(res);
       let tweets = data.statuses;
