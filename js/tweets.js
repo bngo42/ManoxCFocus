@@ -26,17 +26,30 @@ setInterval(() => {
     })
     .catch(console.error);
 
-    if (group.childElementCount >= 5 && group.children[0]){
-      group.removeChild(group.children[0]);
-    }
-    datas.shift();
-    group.appendChild(createBox(datas[0]));
-    if (datas[0]){
-      currentId = datas[0].id;
+    if (group.childElementCount == 0){
+      for(let i = 0; i < 5; i++){
+        addingBlock();
+      };
+    } else {
+      addingBlock();
     }
 
 
 }, 2500);
+
+function addingBlock(){
+  if (group.childElementCount > 0 && document.querySelector('.tweet-loader')){
+    document.querySelector('.tweet-loader').remove();
+  }
+  if (group.childElementCount >= 5 && group.children[0]){
+    group.removeChild(group.children[0]);
+  }
+  datas.shift();
+  group.appendChild(createBox(datas[0]));
+  if (datas[0]){
+    currentId = datas[0].id;
+  }
+}
 
 function request(method, url, params = {}){
   return new Promise((resolve, reject) => {
