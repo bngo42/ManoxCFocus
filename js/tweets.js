@@ -79,7 +79,8 @@ function serialize(obj) {
 }
 
 function createBox(tweet){
-  let item = document.createElement('div'),
+
+  let item = document.createElement('a'),
   imageDiv = document.createElement('div'),
   img = document.createElement('img'),
   content = document.createElement('div'),
@@ -93,6 +94,8 @@ function createBox(tweet){
   item.style.padding = "2%";
   item.appendChild(imageDiv);
   item.appendChild(content);
+  item.href = "https://twitter.com/statuses/" + tweet.id_str;
+  item.target = "_blank";
 
   imageDiv.classList.add('ui', 'tiny', 'image');
   imageDiv.appendChild(img);
