@@ -77,3 +77,15 @@ body::before {
     height:50vw !important;
   }
 }
+
+
+
+
+.wave {
+  animation: wave 1.2s alternate infinite ease-in-out;
+}
+
+
+@keyframes wave {
+  to { transform: translatey(50px);}
+}
