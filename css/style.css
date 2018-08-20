@@ -13,7 +13,7 @@ span, p,h1,h2 {
 body::before {
   content: ' ';
   display: block;
-  background: linear-gradient(-150deg, #f87408, #a71b6c);
+  /* background: linear-gradient(-150deg, #f87408, #a71b6c); */
   background-position: center;
   background-size: cover;
   height: 100vh;
