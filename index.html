@@ -34,11 +34,15 @@
   <!-- HEADER -->
   <div class="row" style="padding: 10% 0">
     <div class="column">
-      <img class="ui fluid image" src="img/logo.png" style="padding:5% 0">
+      <img class="ui fluid image" src="img/logo.png" style="padding:2% 0">
       <h1 class="ui center aligned header" style="font-family: 'Overpass', sans-serif;letter-spacing:0.2em;background-color:rgba(0, 0, 0, 0.5); padding:0.5%">
           STREAM DE CHARITÉ / DIMANCHE 2 SEPTEMBRE 2018
         </h1>
-        <img class="ui small image floated right" src="img/horaire.png" />
+        <div class="ui grid">
+          <div class="sixteen wide column right floated">
+              <img class="ui medium image right floated" src="img/horaire.png" />
+          </div>
+        </div>
     </div>
   </div>
   <!-- STREAM -->
@@ -54,11 +58,15 @@
     <h1>Quel est le but de cet event ?</h1>
     <div>
         <p>
-            A l'occasion de la <a target="_blank" href="https://www.childfocusrun.be/">Child Focus Run</a> qui se déroulera le 2 Septembre 2018 à Mons,
+            A l'occasion de la <a target="_blank" href="https://www.childfocusrun.be">Child Focus Run</a> qui se déroulera le 2 Septembre 2018 à Mons,
             nous avons décidé de lancer un événement afin de récolter un maximum de dons pour aider à financer ce projet. Cette course caritative est
             organisé par la fondation <a target="_blank" href="http://www.childfocus.be">Child Focus</a>, partenaire de cet événement dont 100 % des dons reçus seront renversés 
             à l'association.
         </p>
+        <a  target="_blank" href="https://www.childfocusrun.be" class="ui centered fluid image">
+          <img style="background: linear-gradient(to right, #ffffff 50%,#007ebb 50%);" src="img/ChildFocusRun.png">
+        </a>
+        <img src="img/goodCause.png" class="ui medium left floated image"/>
     </div>
   </div>
   <!-- CHARITY / DONATION -->
@@ -92,9 +100,10 @@
   </div>
   <!-- TWEETS -->
   <div class="row centered" style="padding: 2%;">
-    <h1>Tweetez avec le hashtag <a href="https://twitter.com/intent/tweet?text=%23ManoChildFocus">#ManoChildFocus</a></h1>
+    <h1>Tweetez avec le hashtag <a target="_blank" href="https://twitter.com/intent/tweet?text=%23ManoChildFocusRun">#ManoChildFocusRun</a></h1>
     <div class="sixteen wide column" style="min-height:700px;padding: 2%">
       <div class="tweet-loader ui large active centered inline loader"></div>
+      <img src="img/yourTweet.png" class="tweetarrow hidden ui medium image right floated"/>
       <div class="tweet-feed ui link items">
       </div>
     </div>
@@ -150,7 +159,8 @@
         width: "100%",
         height: "100%",
         channel: "manonolita",
-        layout: "video"
+        layout: "video",
+        autoplay : false
       });
 
   </script>

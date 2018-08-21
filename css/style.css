@@ -4,6 +4,11 @@ img {
     -moz-user-drag: none;
     -o-user-drag: none;
     user-drag: none;
+    image-rendering: -moz-crisp-edges !important; /* Firefox */
+    image-rendering: -o-crisp-edges !important; /* Opera */
+    image-rendering: -webkit-optimize-contrast !important; /* Webkit (non-standard naming) */
+    image-rendering: crisp-edges !important;
+    -ms-interpolation-mode: nearest-neighbor !important;
   }
 
 span, p,h1,h2 {

@@ -1,1 +1,114 @@
-let history=[],order=[38,38,40,40,37,39,37,39,66,65,13];function emptyArray(e=[]){for(let t=0;t<e.length;t++)e[t]&&e[t].remove()}function getRandomInt(e,t){return Math.floor(Math.random()*(t-e))+e}function createRocket(e){let t=document.createElement("img");return t.style.animationDelay=getRandomInt(0,2),t.classList.add("wave"),t.src="img/manorocket.gif",t.style.position="absolute",t.style.top=window.scrollY+getRandomInt(0,window.innerHeight)+"px",t.style.left="0px",t.dataset.factor=e,setTimeout(()=>{t.remove()},1.2*e*1e3),t}document.addEventListener("keydown",e=>{if(history.push(e.keyCode),history.length>order.length&&history.shift(),JSON.stringify(history)==JSON.stringify(order)){let e=document.querySelector("#space-launcher"),t=[];if(0==e.childElementCount){for(let o=0;o<10;o++){let o=createRocket(getRandomInt(8,10));e.appendChild(o),t.push(o)}let o=setInterval(()=>{t.forEach(e=>{e.style.left=parseFloat(e.style.left)+1/e.dataset.factor+"%",parseFloat(e.style.left)>=100&&e.remove()}),0==e.childElementCount&&clearInterval(o)},10)}}});
+let group = document.querySelector(".tweet-feed");
+let datas = [];
+let tweetarr = [];
+let index = 0;
+
+let currentId = 0;
+setInterval(() => {
+  request('GET', 'https://manocf-server.herokuapp.com/hashtag', { currentId, tag : 'arethafranklin' })
+    .then(res => {
+      let data = JSON.parse(res);
+      let tweets = data.statuses;
+
+      tweets.forEach(tweet => {
+        if (!tweet.retweeted_status){
+          let exists = false;
+          datas.forEach(t => {
+            if (t.id == tweet.id){
+              exists = true;
+            }
+          })
+          if (!exists){
+            datas.push(tweet);
+          }
+        }
+      });
+    })
+    .catch(console.error);
+
+    if (group.childElementCount == 0){
+      for(let i = 0; i < 5; i++){
+        addingBlock();
+      };
+    } else {
+      addingBlock();
+    }
+
+
+}, 2500);
+
+function addingBlock(){
+  if (group.childElementCount > 0 && document.querySelector('.tweet-loader')){
+    document.querySelector('.tweet-loader').remove();
+    document.querySelector('.tweetarrow').classList.remove('hidden');
+  }
+  if (group.childElementCount >= 5 && group.children[0]){
+    group.removeChild(group.children[0]);
+  }
+  datas.shift();
+  group.appendChild(createBox(datas[0]));
+  if (datas[0]){
+    currentId = datas[0].id;
+  }
+}
+
+function request(method, url, params = {}){
+  return new Promise((resolve, reject) => {
+    let xhr = new XMLHttpRequest();
+    
+    xhr.open(method, url + '?' + serialize(params), true);
+
+    xhr.onreadystatechange = () => {
+      if(xhr.readyState === 4 && xhr.status === 200) {
+        resolve(xhr.responseText);
+      }
+    };
+    xhr.onerror = () => {
+      reject();
+    }
+    xhr.send();
+  });
+}
+
+function serialize(obj) {
+  var str = [];
+  for (var p in obj)
+    if (obj.hasOwnProperty(p)) {
+      str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+    }
+  return str.join("&");
+}
+
+function createBox(tweet){
+  let item = document.createElement('div'),
+  imageDiv = document.createElement('div'),
+  img = document.createElement('img'),
+  content = document.createElement('div'),
+  header = document.createElement('h2'),
+  textDiv = document.createElement('div'),
+  text = document.createElement('p');
+
+  item.classList.add('item');
+  item.style.backgroundColor = "#ffffff40";
+  item.style.borderRadius = "4px";
+  item.style.padding = "2%";
+  item.appendChild(imageDiv);
+  item.appendChild(content);
+
+  imageDiv.classList.add('ui', 'tiny', 'image');
+  imageDiv.appendChild(img);
+  img.src = (tweet.user.profile_image_url ? tweet.user.profile_image_url : 'img/child_focus.png');
+
+  content.classList.add('content');
+  content.appendChild(header);
+  content.appendChild(textDiv);
+
+  header.classList.add('header');
+  header.innerHTML = "@" + (tweet.user.screen_name ? tweet.user.screen_name :  null);
+
+  textDiv.classList.add('description');
+  textDiv.appendChild(text);
+
+  text.innerHTML = tweet.full_text;
+  return item;
+}
