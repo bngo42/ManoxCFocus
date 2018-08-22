@@ -24,7 +24,9 @@ setInterval(() => {
         }
       });
     })
-    .catch(console.error);
+    .catch(() => {
+      console.log("Oups, une erreur");
+    });
 
     if (group.childElementCount == 0){
       for(let i = 0; i < 5; i++){
@@ -45,9 +47,10 @@ function addingBlock(){
   if (group.childElementCount >= 5 && group.children[0]){
     group.removeChild(group.children[0]);
   }
-  datas.shift();
-  group.appendChild(createBox(datas[0]));
+  
   if (datas[0]){
+    datas.shift();
+    group.appendChild(createBox(datas[0]));
     currentId = datas[0].id;
   }
 }
@@ -97,7 +100,7 @@ function createBox(tweet){
 
   imageDiv.classList.add('ui', 'tiny', 'image');
   imageDiv.appendChild(img);
-  img.src = (tweet.user.profile_image_url ? tweet.user.profile_image_url : 'img/child_focus.png');
+  img.src = (tweet.user.profile_image_url) ? tweet.user.profile_image_url : 'img/child_focus.png';
 
   content.classList.add('content');
   content.appendChild(header);
