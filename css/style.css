@@ -11,7 +11,7 @@ img {
     -ms-interpolation-mode: nearest-neighbor !important;
   }
 
-span, p,h1,h2 {
+span, p,h1,h2,h3 {
     color: white !important;
   }
 
@@ -55,6 +55,11 @@ body::before {
   padding:0.8%;
 }
 
+.donation-count {
+  text-align: center !important;
+  font-size: 5em;
+}
+
 @media only screen and (min-width: 992px) {
   .twitch-player {
     height:40vw;
@@ -81,9 +86,11 @@ body::before {
   .twitch-player {
     height:50vw !important;
   }
+
+  .donation-count {
+    font-size:10vw;
+  }
 }
-
-
 
 
 .wave {

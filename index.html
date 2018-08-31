@@ -38,14 +38,22 @@
       <img alt="Logo de l'evènement" title="Logo de l'evènement" class="ui fluid image" src="img/logo.png" style="padding:2% 0">
       <h1 class="ui center aligned header" style="font-family: 'Overpass', sans-serif;letter-spacing:0.2em;background-color:rgba(0, 0, 0, 0.5); padding:0.5%">
           STREAM DE CHARITÉ / DIMANCHE 2 SEPTEMBRE 2018
-        </h1>
-        <div class="ui grid">
-          <div class="sixteen wide column right floated">
-              <img alt="De 12h00 à 00h00" title="Horaire de l'évènement" class="ui medium image right floated" src="img/horaire.png" />
-          </div>
+      </h1>
+      <div class="ui grid">
+        <div class="sixteen wide column right floated">
+            <img alt="De 12h00 à 00h00" title="Horaire de l'évènement" class="ui medium image right floated" src="img/horaire.png" />
         </div>
+      </div>
     </div>
   </div>
+  <!-- <div class="row centered stackable">
+    <div class="sixteen wide column middle aligned">
+      <h3>Total des donations:</h3>
+    </div>
+    <div class="sixteen wide column">
+      <h1 class="donation-count"><i>...</i></h1>
+    </div>
+  </div> -->
   <!-- STREAM -->
   <div class="row">
     <div class="column">
@@ -151,9 +159,10 @@
       });
     }
   </script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <!-- <script src="js/donations.js"></script> -->
   <script src="js/rocket.js"></script>
   <script src="js/tweets.js"></script>
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
   <script src="https://embed.twitch.tv/embed/v1.js"></script>
   <script type="text/javascript">
       let twitch = new Twitch.Embed("twitch-embed", {
